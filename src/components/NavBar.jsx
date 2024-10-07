@@ -21,7 +21,7 @@ const NavBar = () => {
           rel="noopener noreferrer"
           className="instagram-link"
         >
-          <img src="/ins.png" alt="Instagram" className="instagram-icon" />
+          <img src="./ins.png" alt="Instagram" className="instagram-icon" />
         </a>
       </Navbar.Collapse>
     </Navbar>

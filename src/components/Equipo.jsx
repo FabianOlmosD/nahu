@@ -19,19 +19,19 @@ const Equipo = () => {
     {
       name: "IMPIOMBATO MOTORSPORT",
       description: "Equipo de automovilismo que compite en categorías como el Turismo Carretera y TC Pista Pick Up. Liderado por Nicolás Impiombato, ha logrado destacadas victorias. Su infraestructura avanzada y colaboración con pilotos de renombre lo posicionan como un referente en la preparación y desarrollo de vehículos de competición.",
-      img: "/im.png",
+      img: "./im.png",
       link: "https://www.instagram.com/impiombato.motorsport/"
     },
     {
       name: "PERFORMANCE CENTER",
       description: "Performance Center es una cadena de gomerías especializada en la venta e instalación de neumáticos para autos, camionetas, SUV y utilitarios. Ofrecen servicios como alineación y balanceo, y cuentan con una tienda online con las mejores marcas de neumáticos. Además, brindan envíos a todo el país y una experiencia de compra segura y rápida",
-      img: "/pf.png",
+      img: "./pf.png",
       link: "https://www.performancecenter.com.ar"
     },
     {
       name: "FATE",
       description: "Fate es la mayor productora de neumáticos de Argentina, con una fuerte presencia en el mercado nacional e internacional. Con más de 75 años de experiencia, fabrica neumáticos para automóviles, camionetas y transporte pesado. Su planta industrial es una de las más avanzadas tecnológicamente en la región.",
-      img: "/fate5.png",
+      img: "./fate5.png",
       link: "https://www.fate.com.ar"
 
     }
