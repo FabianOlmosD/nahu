@@ -1,0 +1,269 @@
+/* Estilos generales para todo el sitio */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: Arial, sans-serif;
+  color: white;
+  background: transparent;
+  overflow: auto; /* Permitir scroll si el contenido es largo */
+}
+
+/* Estilo del contenedor raíz de App.jsx */
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+/* Estilos del logo de App.jsx */
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+/* Estilos de las tarjetas de App.jsx */
+.card {
+  padding: 2em;
+}
+
+/* Enlace a la documentación de App.jsx */
+.read-the-docs {
+  color: #afe911;
+}
+
+/* Estilo personalizado del Navbar para todo el sitio */
+.navbar-custom {
+  position: fixed; /* Fijo para que siempre esté visible en la parte superior */
+  top: 0;
+  left: 0;
+  align-items: center;
+  width: 100%; /* Ocupa todo el ancho de la pantalla */
+  z-index: 100; /* Asegura que el Navbar esté delante del video */
+}
+
+/* Estilo para el ícono de Instagram en el Navbar */
+.instagram-link {
+  display: flex;
+  align-items: center;
+  margin-right: 15px; /* Ajusta el espacio del ícono al borde */
+}
+
+.instagram-icon {
+  width: 40px;
+  height: 40px;
+  filter: invert(1); /* Hace que el ícono se vea blanco en fondo oscuro */
+  transition: transform 0.3s ease-in-out;
+}
+
+.instagram-icon:hover {
+  transform: scale(1.1); /* Efecto hover para agrandar el ícono */
+}
+
+/* Contenedor de video para HOME */
+.video-container {
+  position: fixed; /* Fijo para que cubra toda la pantalla */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  z-index: -1; /* Asegura que el video quede detrás del Navbar */
+}
+
+/* Estilo del video en HOME */
+.video-fluid {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(30%);
+}
+
+/* Texto superpuesto en el video de HOME */
+.overlay-text {
+  position: absolute;
+  top: 10%; /* Ajustado para asegurar que no quede detrás del navbar */
+  left: 50%;
+  transform: translate(-50%, 0);
+  z-index: 101; /* Asegura que el texto esté por encima del navbar */
+  text-align: center;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  white-space: nowrap; /* Asegura que el texto no se divida en dos líneas */
+}
+
+/* Efecto de luz para el nombre en el texto de HOME */
+.logo-container div {
+  font-size: 64px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #f5f4f4;
+  font-family: 'Arial Black', sans-serif;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.8),
+               0 0 30px rgba(252, 251, 251, 0.5),
+               0 0 5px rgb(77, 10, 10);
+  overflow: hidden; /* Evitar que el texto desborde */
+}
+
+/* Contenedor principal para "Piloto" y "Banner" */
+.content-container {
+  position: absolute;
+  top: 30%; /* Ajustado para evitar superposición con el título */
+  left: 50%;
+  transform: translate(-50%, 0);
+  display: flex;
+  width: 90%;
+  max-width: 1200px;
+  justify-content: space-around; /* Reducido para acercar el piloto y el banner */
+  align-items: center;
+  z-index: 3;
+  gap: 1rem; /* Espacio entre piloto y banner */
+  flex-wrap: wrap; /* Permite que los elementos se reorganicen en pantallas pequeñas */
+}
+
+/* Efecto de desenfoque y electricidad en la imagen del piloto en HOME */
+.piloto-image {
+  width: 45%;
+  max-width: 400px;
+  height: auto;
+  z-index: 3;
+  animation: glitch 3s infinite; /* Animación constante */
+}
+
+@keyframes glitch {
+  0% {
+    filter: blur(0); /* Imagen clara */
+    transform: translate(0, 0);
+  }
+  10% {
+    filter: brightness(1.5) hue-rotate(15deg) blur(2px);
+    transform: translate(2px, -2px); /* Simulación de movimiento */
+  }
+  20% {
+    filter: brightness(1.2) hue-rotate(-15deg) blur(1px);
+    transform: translate(-2px, 2px);
+  }
+  30% {
+    filter: brightness(1.7) hue-rotate(25deg) blur(3px); /* Efecto de electricidad */
+    transform: translate(1px, -1px);
+  }
+  40% {
+    filter: blur(0); /* Imagen clara */
+    transform: translate(0, 0);
+  }
+  50% {
+    filter: brightness(1.3) hue-rotate(-10deg) blur(2px);
+    transform: translate(-3px, 3px);
+  }
+  60% {
+    filter: brightness(1.5) hue-rotate(20deg) blur(1px);
+    transform: translate(1px, -1px);
+  }
+  70% {
+    filter: brightness(1.8) hue-rotate(-25deg) blur(3px);
+    transform: translate(3px, -3px);
+  }
+  80% {
+    filter: blur(0); /* Imagen clara */
+    transform: translate(0, 0);
+  }
+  100% {
+    filter: blur(0); /* Finaliza el ciclo clara */
+    transform: translate(0, 0);
+  }
+}
+
+/* Estilos del contenedor y los banners en HOME */
+.banner-container {
+  width: var(--banner-width, 45%); /* Banner ajustable con una variable */
+  max-width: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner-image {
+  width: 100%;
+  height: auto;
+  object-fit: scale-down;
+  animation: fadeInOut 10s infinite;
+  box-shadow: 0px 0px 20px 10px rgba(247, 241, 241, 0.8);
+  border-radius: 15px;
+  background: transparent;
+  border: none;
+  filter: opacity(1);
+}
+
+/* Media queries for responsividad */
+@media (max-width: 768px) {
+  .content-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem; /* Espacio entre los elementos al apilarse */
+    top: 55%; /* Ajustado para evitar que se solape con el título */
+  }
+
+  .logo-container div {
+    font-size: 48px;
+  }
+
+  .piloto-image,
+  .banner-container {
+    width: 80%;
+    max-width: 300px;
+    margin-bottom: 1rem;
+  }
+
+  .banner-image {
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .overlay-text {
+    top: 8%; /* Ajustar el título para que quede visible */
+    padding: 0.5rem; /* Reducir padding en pantallas muy pequeñas */
+  }
+
+  .logo-container div {
+    font-size: 32px;
+  }
+
+  .piloto-image,
+  .banner-container {
+    width: 90%;
+    max-width: 200px;
+  }
+
+  .banner-image {
+    max-width: 200px;
+  }
+}

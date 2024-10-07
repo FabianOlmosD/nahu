@@ -1,0 +1,96 @@
+.curriculum-container {
+  padding: 20px;
+  color: white;
+  background-color: black;
+  border-radius: 15px;
+  max-width: 1200px;
+  margin: 50px auto;
+  box-shadow: 0px 0px 20px 10px rgba(247, 241, 241, 0.8);
+  height: auto;
+  overflow-y: auto; /* Permitir scroll si el contenido es largo */
+}
+
+.card {
+  background-color: #000000 !important; /* Fondo completamente negro */
+  color: white;
+  border: none;
+  border-radius: 15px;
+  position: relative;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1); /* Efecto de luz suave desde atrás */
+  overflow: hidden; /* Asegura que el efecto de luz se mantenga dentro de los bordes */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 200%;
+  background: rgba(255, 255, 255, 0.1);
+  transform: skewY(45deg);
+  transition: all 0.5s ease-in-out;
+  pointer-events: none;
+}
+
+.card:hover::before {
+  top: 100%;
+  background: rgba(255, 255, 255, 0.3); /* Efecto más visible al hacer hover */
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.5); /* Efecto de luz más fuerte al hacer hover */
+}
+
+.card-header h2 {
+  font-size: 2rem;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.7),
+               0 0 20px rgba(255, 255, 255, 0.5);
+  transition: text-shadow 0.3s ease-in-out, transform 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.card:hover .card-header h2 {
+  text-shadow: 0 0 30px rgba(57, 255, 20, 1), /* Efecto de brillo verde fluor */
+               0 0 60px rgba(57, 255, 20, 0.9);
+  color: rgb(221, 43, 12); /* Cambia el color del número a verde fluor */
+  transform: scale(1.2); /* Agranda un poco el número */
+}
+
+.equipo-banner {
+  width: 100px;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.card-body img {
+  width: 100%; /* Para que se ajuste al ancho de la tarjeta */
+  max-height: 150px; /* Ajusta este valor para hacer las imágenes más pequeñas */
+  object-fit: contain; /* Muestra la imagen completa sin recortarla */
+  border-radius: 10px; /* Mantén el borde redondeado si es necesario */
+}
+
+@media (max-width: 768px) {
+  .equipo-container {
+    padding: 10px;
+    margin: 20px auto;
+  }
+
+  .card-header h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .equipo-container {
+    padding: 5px;
+    margin: 10px auto;
+  }
+
+  .card-header h2 {
+    font-size: 1.2rem;
+  }
+}
