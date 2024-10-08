@@ -32,8 +32,7 @@ const Equipo = () => {
       name: "FATE",
       description: "Fate es la mayor productora de neumáticos de Argentina, con una fuerte presencia en el mercado nacional e internacional. Con más de 75 años de experiencia, fabrica neumáticos para automóviles, camionetas y transporte pesado. Su planta industrial es una de las más avanzadas tecnológicamente en la región.",
       img: "./fate5.png",
-      link: "https://www.fate.com.ar"
-
+      link: null // No quiero que enlace a ningún sitio
     }
   ];
 
@@ -48,15 +47,27 @@ const Equipo = () => {
         {equipoData.map((item, index) => (
           <div key={index} className="col-md-4 mb-4">
             <div className="card text-white bg-dark h-100">
-              <a href={item.link} target="_blank" rel="noopener noreferrer">
-                <div className="card-header text-center">
-                  <img src={item.img} alt={item.name} className="img-fluid equipo-banner" />
+              {item.link ? (
+                <a href={item.link} target="_blank" rel="noopener noreferrer">
+                  <div className="card-header text-center">
+                    <img src={item.img} alt={item.name} className="img-fluid equipo-banner" />
+                  </div>
+                  <div className="card-body">
+                    <h2>{item.name}</h2>
+                    <p>{item.description}</p>
+                  </div>
+                </a>
+              ) : (
+                <div>
+                  <div className="card-header text-center">
+                    <img src={item.img} alt={item.name} className="img-fluid equipo-banner" />
+                  </div>
+                  <div className="card-body">
+                    <h2>{item.name}</h2>
+                    <p>{item.description}</p>
+                  </div>
                 </div>
-                <div className="card-body">
-                  <h2>{item.name}</h2>
-                  <p>{item.description}</p>
-                </div>
-              </a>
+              )}
             </div>
           </div>
         ))}
@@ -66,3 +77,4 @@ const Equipo = () => {
 };
 
 export default Equipo;
+
